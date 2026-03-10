@@ -13,6 +13,7 @@
     tapping-term-ms = <200>;
     flavor = "balanced";
     quick-tap-ms = <150>;
+    hold-trigger-key-positions = <50>;
 };
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
@@ -52,7 +53,31 @@
         tap-ms = <100>;
     };
 
+    new_behavior: new_behavior {
+        compatible = "zmk,behavior-hold-tap";
+        label = "NEW_BEHAVIOR";
+        bindings = <&mo>, <&mkp>;
+
+        #binding-cells = <2>;
+        hold-trigger-key-positions = <48>;
+        tapping-term-ms = <1>;
+    };
+
     behaviors {
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        switch-layer {
+            bindings = <&to 1>;
+            key-positions = <48 54>;
+        };
+
+        to-0 {
+            bindings = <&to 0>;
+            key-positions = <48 54>;
+        };
     };
 
     keymap {
@@ -64,13 +89,13 @@
 &kp TAB         &kp Q   &kp W   &kp E             &kp R      &kp T       &kp Y          &kp U          &kp I      &kp O    &kp P     &kp RIGHT_BRACKET
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D             &kp F      &kp G       &kp H          &kp J          &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C             &kp V      &kp B       &kp N          &kp M          &kp COMMA  &kp DOT  &kp FSLH  &kp MINUS
-                                &kp LEFT_COMMAND  &kp SPACE  &to 1       &kp RIGHT_ALT  &kp BACKSPACE
+                                &kp LEFT_COMMAND  &kp SPACE  &mo 1       &kp RIGHT_ALT  &kp BACKSPACE
                                                   &mkp MB2   &mkp MB1    &kp ENTER
             >;
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,
+                // 编码器1：上下滚动,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
