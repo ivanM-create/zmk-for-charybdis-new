@@ -69,15 +69,22 @@
     combos {
         compatible = "zmk,combos";
 
-        switch-layer {
+        toLayer1 {
             bindings = <&to 1>;
             key-positions = <48 54>;
+            layers = <0>;
         };
 
-        tolayer0 {
-            bindings = <&to 0>;
+        toNumpad {
+            bindings = <&to 2>;
             key-positions = <48 54>;
             layers = <1>;
+        };
+
+        toLayer0 {
+            bindings = <&to 0>;
+            key-positions = <48 54>;
+            layers = <2>;
         };
     };
 
@@ -96,7 +103,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
@@ -110,6 +117,17 @@
 &kp LCTRL       &none         &none          &none         &none      &none         &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &none      &kp PIPE  &kp EQUAL
                                              &kp LEFT_WIN  &kp SPACE  &to 0         &kp RIGHT_ALT  &kp DEL
                                                            &mkp MB2   &mkp MB1      &kp ENTER
+            >;
+        };
+
+        layer_2 {
+            bindings = <
+&trans  &trans        &trans        &trans        &trans        &trans    &trans        &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans    &trans        &trans  &trans  &trans  &trans  &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
+&trans  &trans        &trans        &trans        &trans        &trans    &trans        &trans  &trans  &trans  &trans  &trans
+                                    &trans        &trans        &trans    &trans        &trans
+                                                  &trans        &trans    &trans
             >;
         };
 
