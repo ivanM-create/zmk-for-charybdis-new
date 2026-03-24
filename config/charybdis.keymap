@@ -89,7 +89,7 @@
 
         mk {
             bindings = <&mkp MB1>;
-            key-positions = <55 52>;
+            key-positions = <42 43>;
         };
     };
 
@@ -108,7 +108,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
