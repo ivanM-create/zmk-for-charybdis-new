@@ -91,6 +91,18 @@
             bindings = <&mkp MB1>;
             key-positions = <42 43>;
         };
+
+        scrolp {
+            bindings = <&to 1>;
+            key-positions = <55 51>;
+            layers = <0>;
+        };
+
+        to0 {
+            bindings = <&to 0>;
+            key-positions = <55 51>;
+            layers = <1>;
+        };
     };
 
     keymap {
@@ -108,7 +120,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
