@@ -114,6 +114,11 @@
             bindings = <&to 2>;
             key-positions = <54 50>;
         };
+
+        language_switch {
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <49 53>;
+        };
     };
 
     keymap {
@@ -131,7 +136,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
@@ -156,6 +161,17 @@
 &trans  &trans        &trans        &trans        &trans        &trans    &trans        &trans      &trans  &trans  &trans  &trans
                                     &trans        &trans        &to 0     &trans        &kp DELETE
                                                   &trans        &trans    &kp ENTER
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+                                &trans  &trans    &trans
             >;
         };
 
